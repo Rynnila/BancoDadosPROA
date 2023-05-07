@@ -4,8 +4,8 @@ Repositório com os diagramas e conceitos trabalhados nas aulas de banco de dado
 ## Índice 
 
 * [Diagrama1 - Hospital](#Diagrama1---Hospital)
-* [Diagrama2 - Hospital Pt.2](#Diagrama2---Hospital-Pt.2)
-* [Diagrama3 - Hospital Lógico](#Diagrama3---Hospital-Logico)
+* [Diagrama2 - Hospital Pt.2](#diagrama2---hospital-pt2)
+* [Diagrama3 - Hospital Lógico](#diagrama3---hospital-lógico)
 
 ### Diagrama1 - Hospital:
 
