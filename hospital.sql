@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS medicoEspecialidade(
 	instrucoes VARCHAR(500)
  );
  
- CREATE TABLE IF NOT EXISTS cenvenio(
+ CREATE TABLE IF NOT EXISTS convenio(
 	id_convenio int(8) NOT NULL AUTO_INCREMENT,
     id_pacienteConv int not null,
     primary key(id_convenio, id_pacienteConv),
