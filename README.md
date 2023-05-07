@@ -6,6 +6,7 @@ Repositório com os diagramas e conceitos trabalhados nas aulas de banco de dado
 * [Diagrama1 - Hospital](#Diagrama1---Hospital)
 * [Diagrama2 - Hospital Pt.2](#diagrama2---hospital-pt2)
 * [Diagrama3 - Hospital Lógico](#diagrama3---hospital-lógico)
+* [Codigo1 - Hospital Fisico](#codigo1---hospital-físico)
 
 ### Diagrama1 - Hospital:
 
@@ -24,3 +25,13 @@ Repositório com os diagramas e conceitos trabalhados nas aulas de banco de dado
  Depois de refazer o modelo conceitual do hospital, dessa vez foi feita a modelagem lógica desse mesmo hospital, ela contém algumas tabelas comuns à bancos de dados como a tabela telefone, e ela também já possui como ficarão as chaves estrangeiras do banco de dados fisico. A cardinalidade foi feita utilizando os famosos pés de galinha!
  
 ![image](https://github.com/Rynnila/BancoDadosPROA/blob/main/DiagramaLogicoHospital.png)
+
+### Codigo1 - Hospital Físico
+Finalmente chagamos ao modelo físico do Hospital, a linguagem usada é o SQL, e a ferramenta de gerenciamento de banco de dados usada foi o MySQL Workbench. *Seja Bem vindo ao banco de dados do hospital! <3*
+
+```SQL
+CREATE DATABASE IF NOT EXISTS HOSPITAL;
+USE HOSPITAL;
+```
+
+
