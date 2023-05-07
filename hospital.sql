@@ -51,9 +51,10 @@ CREATE TABLE IF NOT EXISTS medicoEspecialidade(
 );
  
  CREATE TABLE IF NOT EXISTS consulta(
+	id_consulta INT(8) NOT NULL auto_increment,
 	id_medicoCons int not null,
     id_pacienteCons int not null,
-    constraint id_consulta primary key (id_medicoCons, id_pacienteCons, id_consulta),
+    primary key (id_consulta, id_medicoCons, id_pacienteCons),
     foreign key (id_medicoCons) references medico(id_medico),
     foreign key (id_pacienteCons) references paciente(id_paciente),
     dt_realizacaoCons DATE NOT NULL,
@@ -118,3 +119,4 @@ CREATE TABLE IF NOT EXISTS enfermeiro(
     foreign key (id_quartoInter) references quarto(id_quarto)
  );
  
+ show tables;
