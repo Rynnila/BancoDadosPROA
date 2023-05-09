@@ -2,20 +2,12 @@ CREATE DATABASE IF NOT EXISTS hospital;
 
 use hospital;
 
-CREATE TABLE IF NOT EXISTS telefone(
-	id_telefone INT(8) PRIMARY KEY AUTO_INCREMENT,
-    nr_telefone INT(9) NOT NULL,
-    ddd INT(2) NOT NULL,
-    ddi VARCHAR(4) NOT NULL
-);
-
 CREATE TABLE IF NOT EXISTS paciente(
 	id_paciente INT(8) PRIMARY KEY AUTO_INCREMENT, 
     nome_paciente VARCHAR(300) NOT NULL,
     cpf_paciente varchar(11) NOT NULL,
     dt_nascimentoPaciente DATE NOT NULL,
-    id_telefonePaciente INT NOT NULL,
-    foreign key(id_telefonePaciente) references telefone(id_telefone)
+    telefonePaciente VARCHAR(14) NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS crm(
@@ -30,15 +22,14 @@ CREATE TABLE IF NOT EXISTS medico(
     cpf VARCHAR(11) NOT NULL,
     dt_nascimentoMedico DATE NOT NULL,
     id_crmMedico INT NOT NULL,
-    id_telefoneMedico INT NOT NULL,
-    foreign key (id_telefoneMedico) references telefone(id_telefone),
+    telefoneMedico VARCHAR(14) NOT NULL,
     foreign key (id_crmMedico) references crm(id_crm)
 );
 
  CREATE TABLE IF NOT EXISTS especialidade(
 	id_especialidade int(8) PRIMARY KEY AUTO_INCREMENT,
     nm_especialidade VARCHAR(300) NOT NULL,
-    abr_especialidade VARCHAR(20) NOT NULL
+    abr_especialidade VARCHAR(20) NULL
  );
 
 CREATE TABLE IF NOT EXISTS medicoEspecialidade(
