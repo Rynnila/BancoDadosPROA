@@ -20,6 +20,7 @@ CREATE TABLE IF NOT EXISTS crm(
 CREATE TABLE IF NOT EXISTS medico(
 	id_medico INT(8) PRIMARY KEY AUTO_INCREMENT,
     cpf VARCHAR(11) NOT NULL,
+    nm_medico VARCHAR(300) NOT NULL,
     dt_nascimentoMedico DATE NOT NULL,
     id_crmMedico INT NOT NULL,
     telefoneMedico VARCHAR(14) NOT NULL,
