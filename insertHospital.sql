@@ -4,16 +4,16 @@ show create table medico;
 
 select * from medico;
 insert into medico values
-(null, '5684751125', curdate(), 1, 1, '+5511991675634'),
-(null, '8547851126', curdate(), 2, 2, '+5522994521478'),
-(null, '5561488139', curdate(), 3, 3, '+5511997458125'),
-(null, '3654127003', curdate(), 4, 4, '+5548994785426'),
-(null, '0089682132', curdate(), 5, 5, '+5599945871256'),
-(null, '7458126948', curdate(), 6, 6, '+5511995143677'),
-(null, '8544545153', curdate(), 7, 7, '+5515985475412'),
-(null, '7854544774', curdate(), 8, 8, '+5585997451458'),
-(null, '9987455444', curdate(), 9, 9, '+5511996541274'),
-(null, '7754841688', curdate(), 10, 10, '+5548965444214');
+(null, '5684751125', 'Newton Nakamura', curdate(), 1, 1, '+5511991675634'), 
+(null, '8547851126', '', curdate(), 2, 2, '+5522994521478'),
+(null, '5561488139', 'Camila Maria Barbosa', curdate(), 3, 3, '+5511997458125'),
+(null, '3654127003', 'Juliana Mossini Nicoliello', curdate(), 4, 4, '+5548994785426'),
+(null, '0089682132', '', curdate(), 5, 5, '+5599945871256'),
+(null, '7458126948', '', curdate(), 6, 6, '+5511995143677'),
+(null, '8544545153', '', curdate(), 7, 7, '+5515985475412'),
+(null, '7854544774', 'Sergio Belczak', curdate(), 8, 8, '+5585997451458'),
+(null, '9987455444', '', curdate(), 9, 9, '+5511996541274'),
+(null, '7754841688', '', curdate(), 10, 10, '+5548965444214');
 
 select * from crm;
 insert into crm values 
@@ -73,4 +73,25 @@ INSERT INTO  paciente values
 (null, 'Yasmin Santana', '9852411054', curdate(), '+5511698885089'),
 (null, 'Alex Pandrea', '8547412305', curdate(), '+5511998445120');
 
-
+insert into consulta values
+(null, 'id_medico', 'id_paciente', 'dt', "hr", 'valor')
+(null, 1, 14, DATE '2015-01-02', '11:20', 'R$00,00'), //yasmin Ginecologista (grávida)
+(null, 2, 10, DATE '2016-02-02','12:30', 'R$00,00'), //Eduardo Cardiologia
+(null, 6, 1, DATE '2017-03-02','14:00', 'R$00,00'), //GUILHERME Papaléo RADIOLOGIA(QUEBROU A PERNA)
+(null, 7, 3, DATE '2018-04-02','15:25', 'R$00,00'), //AMANDA pediatra
+(null, 3, 10, DATE '2019-05-02','16:20', 'R$00,00'), //eduardo dermato
+(null, 5, 11, DATE '2020-06-02','10:50', 'R$00,00'), //jeff Gastrenterologia (gastrite) 
+(null, 1, 5, DATE '2021-07-02','11:00', 'R$00,00'), //aline Mastologia 
+(null, 7, 11, DATE '2015-08-02','14:00', 'R$00,00'), //jeff oftalmo
+(null, 4, 2, DATE '2016-09-02','10:00', 'R$00,00'), //Guilherme maranhao clinico geral
+(null, 4, 4, DATE '2017-10-02','12:20', 'R$00,00'), //jaqueline clinico geral
+(null, 3, 4, DATE '2018-11-02','09:00', 'R$00,00'), //jaqueline Dermatologia (insolação)
+(null, 10, 5, DATE '2019-12-02','8:30', 'R$00,00'), //aline barros Homeopatia (ansiedade)
+(null, 1, 6, DATE '2020-12-02','15:20', 'R$00,00'), //Laura mastologia
+(null, 8, 7, DATE '2021-01-02','08:00', 'R$00,00'), //vitoria pediatria
+(null, 9, 8, DATE '2015-02-02','12:00', 'R$00,00'), //Kaique oftalmo
+(null, 5, 9, DATE '2016-03-02','13:00', 'R$00,00'), //robson clinico
+(null, 2, 12, DATE '2017-04-02','09:00', 'R$00,00'), //CardiologiaHoudini
+(null, 5, 13, DATE '2018-05-02','16:20', 'R$00,00'), //Pablo clinico
+(null, 10, 15, DATE '2019-06-02','17:00', 'R$00,00'), //alex Homeopatia (ansioso)
+(null, 6, 10, DATE '2022-01-01','10:20', 'R$00,00'); //eduardo radiologia
