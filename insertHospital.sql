@@ -8,8 +8,8 @@ insert into medico values
 (null, '5561488139', 'Camila Maria Barbosa', curdate(), 2, '+551134767254'),
 (null, '3654127003', 'Juliana Mossini Nicoliello', curdate(), 3, '+551150838222'),
 (null, '7854544774', 'Sergio Belczak', curdate(), 4, '+551138925642'),
+(null, '8547851126', 'Andressa Amorim', curdate(), 5, '+551150524527'),
 
-(null, '8547851126', '', curdate(), 2, '+5522994521478'),
 (null, '0089682132', '', curdate(), 5, '+5599945871256'),
 (null, '7458126948', '', curdate(), 6, '+5511995143677'),
 (null, '8544545153', '', curdate(), 7, '+5515985475412'),
@@ -22,8 +22,8 @@ insert into crm values
 (null, '168120', curdate(),'SP'),
 (null, '101092', curdate(),'SP'),
 (null, '118282 ', curdate(),'SP'),
+(null, '178899', curdate(),'SP'),
 
-(null, '120458754', curdate(),'MA'),
 (null, '985478521', curdate(),'SP'),
 (null, '145217478', curdate(),'SP'),
 (null, '102478521', curdate(),'CE'),
@@ -50,9 +50,10 @@ INSERT INTO medicoEspecialidade values
 (2, 3, DATE '2019-12-20'),
 (3, 4, DATE '2007-12-20'),
 (3, 2, DATE '2003-12-20'),
-(4, 10,DATE '2008-12-20'),
-(4, 10,curdate()),
-(7, 1,curdate()),
+(4, 10, DATE '2008-12-20'),
+(5, 5, DATE '2017-12-20'),
+(5, 6, DATE '2019-12-20'),
+
 (8, 1,curdate()),
 (9, 7,curdate()),
 (10, 9,curdate()),
