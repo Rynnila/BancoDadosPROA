@@ -4,23 +4,25 @@ show create table medico;
 
 select * from medico;
 insert into medico values
-(null, '5684751125', 'Newton Nakamura', curdate(), 1, 1, '+5511991675634'), 
-(null, '8547851126', '', curdate(), 2, 2, '+5522994521478'),
-(null, '5561488139', 'Camila Maria Barbosa', curdate(), 3, 3, '+5511997458125'),
-(null, '3654127003', 'Juliana Mossini Nicoliello', curdate(), 4, 4, '+5548994785426'),
-(null, '0089682132', '', curdate(), 5, 5, '+5599945871256'),
-(null, '7458126948', '', curdate(), 6, 6, '+5511995143677'),
-(null, '8544545153', '', curdate(), 7, 7, '+5515985475412'),
-(null, '7854544774', 'Sergio Belczak', curdate(), 8, 8, '+5585997451458'),
-(null, '9987455444', '', curdate(), 9, 9, '+5511996541274'),
-(null, '7754841688', '', curdate(), 10, 10, '+5548965444214');
+(null, '5684751125', 'Newton Nakamura', curdate(), 1, '+5520925999'),
+(null, '5561488139', 'Camila Maria Barbosa', curdate(), 2, '+551134767254'),
+(null, '3654127003', 'Juliana Mossini Nicoliello', curdate(), 3, '+551150838222'),
+(null, '7854544774', 'Sergio Belczak', curdate(), 4, '+551138925642'),
+
+(null, '8547851126', '', curdate(), 2, '+5522994521478'),
+(null, '0089682132', '', curdate(), 5, '+5599945871256'),
+(null, '7458126948', '', curdate(), 6, '+5511995143677'),
+(null, '8544545153', '', curdate(), 7, '+5515985475412'),
+(null, '9987455444', '', curdate(), 9, '+5511996541274'),
+(null, '7754841688', '', curdate(), 10, '+5548965444214');
 
 select * from crm;
 insert into crm values 
-(null, '671234242', curdate(),'SP'),
-(null, '154789621', curdate(),'RJ'),
-(null, '145214789', curdate(),'SP'),
-(null, '365214789', curdate(),'SC'),
+(null, '47742', curdate(),'SP'),
+(null, '168120', curdate(),'SP'),
+(null, '101092', curdate(),'SP'),
+(null, '118282 ', curdate(),'SP'),
+
 (null, '120458754', curdate(),'MA'),
 (null, '985478521', curdate(),'SP'),
 (null, '145217478', curdate(),'SP'),
@@ -28,27 +30,28 @@ insert into crm values
 (null, '021455248', curdate(),'SP'),
 (null, '004578512', curdate(),'SC');
 
-
+select * from especialidade;
 insert into especialidade values
 (null, 'Pediatria', 'PED'),
-(null, 'Clínica Geral'),
+(null, 'Clínica Geral', null),
 (null, 'Gastrenterologia', 'gastroenterol'),
 (null, 'Dermatologia', 'dermato'),
 (null, 'Ginecologista','gineco'),
-(null, 'Mastologia'),
+(null, 'Mastologia', null),
 (null, 'Oftalmologia', 'oftalmo'),
-(null, 'Radioterapia'),
-(null, 'Homeopatia'),
-(null, 'Cardiologia');
+(null, 'Radioterapia', null),
+(null, 'Homeopatia', null),
+(null, 'Cardiologia', null);
 
+select * from medicoEspecialidade;
 INSERT INTO medicoEspecialidade values
-(1, 5,curdate()),
-(1, 6,curdate()),
-(2, 10,curdate()),
-(3, 4,curdate()),
-(4, 2,curdate()),
-(5, 3,curdate()),
-(6, 8,curdate()),
+(1, 1,DATE '1983-12-20'),
+(2, 1, DATE '2017-12-09'),
+(2, 3, DATE '2019-12-20'),
+(3, 4, DATE '2007-12-20'),
+(3, 2, DATE '2003-12-20'),
+(4, 10,DATE '2008-12-20'),
+(4, 10,curdate()),
 (7, 1,curdate()),
 (8, 1,curdate()),
 (9, 7,curdate()),
@@ -95,3 +98,6 @@ insert into consulta values
 (null, 5, 13, DATE '2018-05-02','16:20', 'R$00,00'), //Pablo clinico
 (null, 10, 15, DATE '2019-06-02','17:00', 'R$00,00'), //alex Homeopatia (ansioso)
 (null, 6, 10, DATE '2022-01-01','10:20', 'R$00,00'); //eduardo radiologia
+
+select * from medicoEspecialidade inner join medico on medicoEspecialidade.id_medicoESP=medico.id_medico;
+select * from medicoEspecialidade inner join especialidade on medicoEspecialidade.id_especialidadeESP=especialidade.id_especialidade;
