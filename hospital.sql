@@ -42,6 +42,16 @@ CREATE TABLE IF NOT EXISTS medicoEspecialidade(
     dt_diplomacao DATE NOT NULL
 );
  
+  CREATE TABLE IF NOT EXISTS convenio(
+	id_convenio int(8) NOT NULL AUTO_INCREMENT,
+    id_pacienteConv int not null,
+    primary key(id_convenio, id_pacienteConv),
+    foreign key(id_pacienteConv) references paciente(id_paciente),
+    nm_convenio varchar(250) NOT NULL,
+    cnpj_convenio int(14) NOT NULL,
+    tempo_carencia VARCHAR(100)
+ );
+
  CREATE TABLE IF NOT EXISTS consulta(
 	id_consulta INT(8) NOT NULL auto_increment,
 	id_medicoCons int not null,
@@ -51,7 +61,9 @@ CREATE TABLE IF NOT EXISTS medicoEspecialidade(
     foreign key (id_pacienteCons) references paciente(id_paciente),
     dt_realizacaoCons DATE NOT NULL,
     hr_realizacaoCons TIME NOT NULL,
-    valor_consulta VARCHAR(10) NOT NULL
+    valor_consulta VARCHAR(10) NOT NULL,
+    id_convenioCons int null,
+    foreign key (id_convenioCons) references convenio(id_convenio)
 );
  
  CREATE TABLE IF NOT EXISTS receita(
