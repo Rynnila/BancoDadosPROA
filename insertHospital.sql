@@ -118,6 +118,8 @@ insert into receita values
 SELECT * FROM consulta
 INNER JOIN paciente ON consulta.id_pacienteCons = paciente.id_paciente
 INNER JOIN medico ON consulta.id_medicoCons = medico.id_medico
+inner join medicoEspecialidade on medico.id_medico=medicoEspecialidade.id_medicoESP
+inner join especialidade on medicoEspecialidade.id_especialidadeESP=especialidade.id_especialidade
 order by consulta.id_consulta;
 
 select * from medicoEspecialidade 
@@ -132,3 +134,18 @@ inner join especialidade on medicoEspecialidade.id_especialidadeESP=especialidad
 
 select * from consulta;
 select * from paciente;
+select * from internacao;
+SELECT * FROM consulta
+INNER JOIN paciente ON consulta.id_pacienteCons = paciente.id_paciente
+INNER JOIN medico ON consulta.id_medicoCons = medico.id_medico
+inner join medicoEspecialidade on medico.id_medico=medicoEspecialidade.id_medicoESP
+inner join especialidade on medicoEspecialidade.id_especialidadeESP=especialidade.id_especialidade
+order by consulta.id_consulta;
+insert into internacao values
+(4, ),
+(),
+(),
+(),
+(),
+(),
+();
