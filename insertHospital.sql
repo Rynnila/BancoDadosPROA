@@ -166,7 +166,7 @@ select * from quarto;
 insert into quarto values
 (null, 1),
 (null, 2),
-(null, 3)
+(null, 3),
 (null, 4),
 (null, 5),
 (null, 6);
