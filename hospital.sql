@@ -108,9 +108,10 @@ CREATE TABLE IF NOT EXISTS enfermeiro(
  );
  
  CREATE TABLE IF NOT EXISTS internacao(
+    id_internacao int not null auto_increment,
 	id_pacienteInter int not null,
     id_enfermeiroInter int not null,
-    primary key(id_pacienteInter, id_enfermeiroInter),
+    primary key(id_internacao, id_pacienteInter, id_enfermeiroInter),
     foreign key (id_pacienteInter) references paciente(id_paciente),
     foreign key (id_enfermeiroInter) references enfermeiro(id_enfermeiro),
     dt_entradaInter DATE NOT NULL,

@@ -114,6 +114,17 @@ insert into receita values
 (null, 10, 'Acetilcisteína Xarope, Prednisona', '1 caixa de cada', 'Acetilcisteína: de 2 a 3 soluções por dia; Prednisona: 1 comprimido por dia. Realizar inalações com soro fisiológico antes de dormir.'),
 (null, 9, 'Ibuprofeno, Dipirona, Paracetamol', '2 caixas de Ibuprofeno e Paracetamol + 1 caixa de Dipirona', '2 comprimidos de Ibuprofeno 2x por dia; Dipirona sempre que sentir dor; 1 paracetamol a cada 6 horas.');
 
+insert into enfermeiro values
+(null, 'Roseni Sena', 87212, '17885421146'),
+(null, 'Madre Marie Domineuc', 85475, '36547851125'),
+(null, 'Ethel Parsons', 65874, '45217896632'),
+(null, 'Laís Netto', 37623, '09457613240'),
+(null, 'Rachel S. Haddock Lobo', 85472, '98745210732'),
+(null, 'Edith Magalhães', 01204, '79654120321'),
+(null, 'Maria Rosa Sousa Pinheiro', 87452, '85712036541'),
+(null, 'Olga Verderese', 85471, '98541237012'),
+(null, 'Ana Néri', 85471, '21485479965'),
+(null, 'Dona Ivone Lara', 56214, '96587452211');
 
 SELECT * FROM consulta
 INNER JOIN paciente ON consulta.id_pacienteCons = paciente.id_paciente
@@ -134,6 +145,35 @@ inner join especialidade on medicoEspecialidade.id_especialidadeESP=especialidad
 
 select * from consulta;
 select * from paciente;
+
+select * from internacao;
+
+SELECT  consulta.id_consulta, paciente.id_paciente, medico.id_medico, consulta.dt_realizacaoCons FROM consulta
+INNER JOIN paciente ON consulta.id_pacienteCons = paciente.id_paciente
+INNER JOIN medico ON consulta.id_medicoCons = medico.id_medico
+inner join medicoEspecialidade on medico.id_medico=medicoEspecialidade.id_medicoESP
+inner join especialidade on medicoEspecialidade.id_especialidadeESP=especialidade.id_especialidade
+order by consulta.id_consulta;
+
+SELECT * FROM consulta
+INNER JOIN paciente ON consulta.id_pacienteCons = paciente.id_paciente
+INNER JOIN medico ON consulta.id_medicoCons = medico.id_medico
+inner join medicoEspecialidade on medico.id_medico=medicoEspecialidade.id_medicoESP
+inner join especialidade on medicoEspecialidade.id_especialidadeESP=especialidade.id_especialidade
+order by consulta.id_consulta;
+
+select * from quarto;
+insert into quarto values
+(null, 1),
+(null, 2),
+(null, 3);
+
+select * from tipo_quarto;
+insert into tipo_quarto values
+(null, 1, 'Quarto pós-operatório, feito para pessoas que acabaram de sair de uma cirurgia', 'R$150,00'),
+(null, 2, 'Quarto para internação breve, o pacinte ficará no máximo 3 dias nesse quarto', 'R$60,00'),
+(null, 3 , 'Quarto com modificações para PCD', 'R$100,00');
+
 select * from internacao;
 SELECT * FROM consulta
 INNER JOIN paciente ON consulta.id_pacienteCons = paciente.id_paciente
@@ -142,10 +182,10 @@ inner join medicoEspecialidade on medico.id_medico=medicoEspecialidade.id_medico
 inner join especialidade on medicoEspecialidade.id_especialidadeESP=especialidade.id_especialidade
 order by consulta.id_consulta;
 insert into internacao values
-(4, ),
-(),
-(),
-(),
-(),
-(),
-();
+(null, 7, 1, DATE '2018-04-03', DATE'2018-04-18', DATE '2018-04-15', 'Paciente internado após uma cirurgia no coração.', 4, 1),
+(null, 9, 2, DATE '2015-01-02', DATE '2015-01-04', DATE '2015-01-04', 'Paciente internado com desidratação, a criança apresenta quadros comuns', 1, 2),
+(null, 9, 2, DATE '2018-04-02', DATE '2018-04-19', DATE '2018-04-15', 'Paciente com deficiência locomotiva internado após cirurgia simples no coração', 4, 3),
+(null, 2, 3, DATE '2016-09-02', DATE '2016-09-03', DATE '2016-09-04', 'Paciente internado por coma alcoólico, ele apresentou dores no dia de alta previsto e ficou mais um dia no hospital', 9, 2),
+(null, 8, 6, DATE '2015-08-02', DATE '2015-09-01', DATE '2015-09-01', 'Paciente internada para realização de exames após ter uma fratura exposta', 8, 3),
+(null, 14, 4, DATE '2021-07-02', DATE '2021-07-22', DATE '2021-07-20', 'Paciente internado após uma cirurgia na cabeça.', 7, 1),
+(null, 14, 5, DATE '2015-08-02', DATE '2015-08-02', DATE '2015-08-02', 'Paciente internado após passar mal na sala de raio-x', 8, 2);
