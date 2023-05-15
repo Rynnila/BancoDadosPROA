@@ -166,21 +166,21 @@ select * from quarto;
 insert into quarto values
 (null, 1),
 (null, 2),
-(null, 3);
+(null, 3)
+(null, 4),
+(null, 5),
+(null, 6);
 
 select * from tipo_quarto;
 insert into tipo_quarto values
 (null, 1, 'Quarto pós-operatório, feito para pessoas que acabaram de sair de uma cirurgia', 'R$150,00'),
 (null, 2, 'Quarto para internação breve, o pacinte ficará no máximo 3 dias nesse quarto', 'R$60,00'),
-(null, 3 , 'Quarto com modificações para PCD', 'R$100,00');
+(null, 3, 'Quarto com modificações para PCD', 'R$100,00'),
+(null, 4, 'Apartamento', 'R$500,00'),
+(null, 5, 'Quarto duplo', 'R$50,00'),
+(null, 6, 'Enfermaria', 'R$80,00');
 
 select * from internacao;
-SELECT * FROM consulta
-INNER JOIN paciente ON consulta.id_pacienteCons = paciente.id_paciente
-INNER JOIN medico ON consulta.id_medicoCons = medico.id_medico
-inner join medicoEspecialidade on medico.id_medico=medicoEspecialidade.id_medicoESP
-inner join especialidade on medicoEspecialidade.id_especialidadeESP=especialidade.id_especialidade
-order by consulta.id_consulta;
 insert into internacao values
 (null, 7, 1, DATE '2018-04-03', DATE'2018-04-18', DATE '2018-04-15', 'Paciente internado após uma cirurgia no coração.', 4, 1),
 (null, 9, 2, DATE '2015-01-02', DATE '2015-01-04', DATE '2015-01-04', 'Paciente internado com desidratação, a criança apresenta quadros comuns', 1, 2),
