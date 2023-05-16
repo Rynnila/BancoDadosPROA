@@ -75,26 +75,26 @@ insert into convenio values
 (null, 15, 'Porto Seguro', '8192192', '30 dias');
 
 insert into consulta values
-(null, 1, 9, DATE '2015-01-02', '11:20', 'R$250,00', null), 
-(null, 2, 10, DATE '2016-02-02','12:30', 'R$150,50', 3), 
-(null, 3, 3, DATE '2017-03-02','14:00', 'R$320,00', null), 
-(null, 4, 7, DATE '2018-04-02','15:25', 'R$300,00', null), 
-(null, 5, 11, DATE '2019-05-02','16:20', 'R$109,00', null), 
-(null, 6, 4, DATE '2020-06-02','10:50', 'R$200,00', null), 
-(null, 7, 5, DATE '2021-07-02','11:00', 'R$150,00', 2), 
-(null, 8, 8, DATE '2015-08-02','14:00', 'R$500,00', null), 
-(null, 9, 2, DATE '2016-09-02','10:00', 'R$60,00', null), 
-(null, 10, 11, DATE '2017-10-02','12:20', 'R$90,00', null), 
-(null, 1, 10, DATE '2011-01-02', '11:20', 'R$120,00', 3), 
-(null, 2, 1, DATE '2016-02-02','12:30', 'R$122,50', 1), 
-(null, 3, 6, DATE '2017-03-02','14:00', 'R$280,00', null), 
-(null, 4, 9, DATE '2018-04-02','15:25', 'R$170,00', null), 
-(null, 5, 13, DATE '2019-05-02','16:20', 'R$60,00', null), 
-(null, 6, 12, DATE '2020-06-02','10:50', 'R$140,00', null), 
-(null, 7, 14, DATE '2021-07-02','11:00', 'R$189,00', null), 
-(null, 8, 14, DATE '2015-08-02','14:00', 'R$500,00', null), 
-(null, 9, 2, DATE '2016-09-02','10:00', 'R$200,00', null), 
-(null, 10, 15, DATE '2017-10-02','12:20', 'R$90,00', 4);
+(null, 1, 9, DATE '2015-01-02', '11:20', 250.00, null), 
+(null, 2, 10, DATE '2016-02-02','12:30', 150.50, 3), 
+(null, 3, 3, DATE '2017-03-02','14:00', 320.00, null), 
+(null, 4, 7, DATE '2018-04-02','15:25', 300.00, null), 
+(null, 5, 11, DATE '2019-05-02','16:20', 109.00, null), 
+(null, 6, 4, DATE '2020-06-02','10:50', 200.00, null), 
+(null, 7, 5, DATE '2021-07-02','11:00', 150.00, 2), 
+(null, 8, 8, DATE '2015-08-02','14:00', 500.00, null), 
+(null, 9, 2, DATE '2016-09-02','10:00', 60.00, null), 
+(null, 10, 11, DATE '2017-10-02','12:20', 90.00, null), 
+(null, 1, 10, DATE '2011-01-02', '11:20', 120.00, 3), 
+(null, 2, 1, DATE '2016-02-02','12:30', 122.50, 1), 
+(null, 3, 6, DATE '2017-03-02','14:00', 280.00, null), 
+(null, 4, 9, DATE '2018-04-02','15:25', 170.00, null), 
+(null, 5, 13, DATE '2019-05-02','16:20', 60.00, null), 
+(null, 6, 12, DATE '2020-06-02','10:50', 140.00, null), 
+(null, 7, 14, DATE '2021-07-02','11:00', 189.00, null), 
+(null, 8, 14, DATE '2015-08-02','14:00', 500.00, null), 
+(null, 9, 2, DATE '2016-09-02','10:00', 200.00, null), 
+(null, 10, 15, DATE '2017-10-02','12:20', 90.00, 4);
 
 insert into receita values 
 (null, 3, 'Minoxidil, Lavitan, Cortisona', '2 caixas de cada', 'De 12 em horas: 1 comprimido de Minoxidil; Uma cápsula de Lavitan por dia; 7,5 mg de Cortisona por dia'),
@@ -129,12 +129,12 @@ insert into quarto values
 (null, 6);
 
 insert into tipo_quarto values
-(null, 1, 'Quarto pós-operatório, feito para pessoas que acabaram de sair de uma cirurgia', 'R$150,00'),
-(null, 2, 'Quarto para internação breve, o pacinte ficará no máximo 3 dias nesse quarto', 'R$60,00'),
-(null, 3, 'Quarto com modificações para PCD', 'R$100,00'),
-(null, 4, 'Apartamento', 'R$500,00'),
-(null, 5, 'Quarto duplo', 'R$50,00'),
-(null, 6, 'Enfermaria', 'R$80,00');
+(null, 1, 'Quarto pós-operatório, feito para pessoas que acabaram de sair de uma cirurgia', 150.00),
+(null, 2, 'Quarto para internação breve, o pacinte ficará no máximo 3 dias nesse quarto', 60.00),
+(null, 3, 'Quarto com modificações para PCD', 100.00),
+(null, 4, 'Apartamento', 500.00),
+(null, 5, 'Quarto duplo', 50.00),
+(null, 6, 'Enfermaria', 80.00);
 
 insert into internacao values
 (null, 7, 1, DATE '2018-04-03', DATE'2018-04-18', DATE '2018-04-15', 'Paciente internado após uma cirurgia no coração.', 4, 1),

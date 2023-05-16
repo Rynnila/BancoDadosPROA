@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS medicoEspecialidade(
     foreign key (id_pacienteCons) references paciente(id_paciente),
     dt_realizacaoCons DATE NOT NULL,
     hr_realizacaoCons TIME NOT NULL,
-    valor_consulta VARCHAR(10) NOT NULL,
+    valor_consulta decimal(12,2) NOT NULL,
     id_convenioCons int null,
     foreign key (id_convenioCons) references convenio(id_convenio)
 );
@@ -104,7 +104,7 @@ CREATE TABLE IF NOT EXISTS enfermeiro(
     primary key (id_tipoQuarto, id_quartoTipo),
     foreign key (id_quartoTipo) references quarto(id_quarto),
     ds_quarto VARCHAR(500) NOT NULL,
-    valorDiaria VARCHAR(10)
+    valorDiaria decimal(12,2)
  );
  
  CREATE TABLE IF NOT EXISTS internacao(
