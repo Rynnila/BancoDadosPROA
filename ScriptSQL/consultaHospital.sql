@@ -44,4 +44,14 @@ inner join medicoEspecialidade on medico.id_medico=medicoEspecialidade.id_medico
 inner join especialidade on medicoEspecialidade.id_especialidadeESP=especialidade.id_especialidade
 order by consulta.id_consulta;
 
+select id_consulta, id_medicoCons, id_pacienteCons, dt_realizacaoCons, hr_realizacaoCons, valor_consulta, id_convenioCons
+from consulta where dt_realizacaoCons>=DATE('2020-01-01');
+select avg(valor_consulta) as media_consultas2020 from consulta where dt_realizacaoCons>=DATE('2020-01-01');
 
+select * from internacao where dt_alta>dt_prev_alta;
+
+select * from receita
+inner join consulta on receita.id_consultaRec=consulta.id_consulta 
+order by id_consulta asc limit 1;
+
+select * from consulta;
