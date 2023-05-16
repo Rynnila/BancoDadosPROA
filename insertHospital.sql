@@ -51,12 +51,6 @@ INSERT INTO medicoEspecialidade values
 (9, 2, DATE '2018-12-10'),
 (10, 2, DATE '2018-12-10');
 
-select * from medico;
-select * from crm;
-select * from especialidade;
-select * from medicoEspecialidade;
-
-select * from paciente;
 INSERT INTO  paciente values
 (null, 'MARIA LUCIA FRANCISCO AROFO', '23110501848', DATE '1942-03-12', '+552121050000'),
 (null, 'EMERSON MENA', '88594432968', DATE '1973-05-12', '+554535244382'),
@@ -126,43 +120,6 @@ insert into enfermeiro values
 (null, 'Ana Néri', 85471, '21485479965'),
 (null, 'Dona Ivone Lara', 56214, '96587452211');
 
-SELECT * FROM consulta
-INNER JOIN paciente ON consulta.id_pacienteCons = paciente.id_paciente
-INNER JOIN medico ON consulta.id_medicoCons = medico.id_medico
-inner join medicoEspecialidade on medico.id_medico=medicoEspecialidade.id_medicoESP
-inner join especialidade on medicoEspecialidade.id_especialidadeESP=especialidade.id_especialidade
-order by consulta.id_consulta;
-
-select * from medicoEspecialidade 
-inner join medico on medicoEspecialidade.id_medicoESP=medico.id_medico
-inner join especialidade on medicoEspecialidade.id_especialidadeESP=especialidade.id_especialidade
-order by medico.id_medico;
-
-select * from receita
-inner join consulta on receita.id_consultaRec=consulta.id_consulta
-inner join medicoEspecialidade on consulta.id_medicoCons=medicoEspecialidade.id_medicoESP
-inner join especialidade on medicoEspecialidade.id_especialidadeESP=especialidade.id_especialidade;
-
-select * from consulta;
-select * from paciente;
-
-select * from internacao;
-
-SELECT  consulta.id_consulta, paciente.id_paciente, medico.id_medico, consulta.dt_realizacaoCons FROM consulta
-INNER JOIN paciente ON consulta.id_pacienteCons = paciente.id_paciente
-INNER JOIN medico ON consulta.id_medicoCons = medico.id_medico
-inner join medicoEspecialidade on medico.id_medico=medicoEspecialidade.id_medicoESP
-inner join especialidade on medicoEspecialidade.id_especialidadeESP=especialidade.id_especialidade
-order by consulta.id_consulta;
-
-SELECT * FROM consulta
-INNER JOIN paciente ON consulta.id_pacienteCons = paciente.id_paciente
-INNER JOIN medico ON consulta.id_medicoCons = medico.id_medico
-inner join medicoEspecialidade on medico.id_medico=medicoEspecialidade.id_medicoESP
-inner join especialidade on medicoEspecialidade.id_especialidadeESP=especialidade.id_especialidade
-order by consulta.id_consulta;
-
-select * from quarto;
 insert into quarto values
 (null, 1),
 (null, 2),
@@ -171,7 +128,6 @@ insert into quarto values
 (null, 5),
 (null, 6);
 
-select * from tipo_quarto;
 insert into tipo_quarto values
 (null, 1, 'Quarto pós-operatório, feito para pessoas que acabaram de sair de uma cirurgia', 'R$150,00'),
 (null, 2, 'Quarto para internação breve, o pacinte ficará no máximo 3 dias nesse quarto', 'R$60,00'),
@@ -180,7 +136,6 @@ insert into tipo_quarto values
 (null, 5, 'Quarto duplo', 'R$50,00'),
 (null, 6, 'Enfermaria', 'R$80,00');
 
-select * from internacao;
 insert into internacao values
 (null, 7, 1, DATE '2018-04-03', DATE'2018-04-18', DATE '2018-04-15', 'Paciente internado após uma cirurgia no coração.', 4, 1),
 (null, 9, 2, DATE '2015-01-02', DATE '2015-01-04', DATE '2015-01-04', 'Paciente internado com desidratação, a criança apresenta quadros comuns', 1, 2),
