@@ -33,3 +33,52 @@ Finalmente chagamos ao modelo físico do Hospital, a linguagem usada é o SQL, e
 CREATE DATABASE IF NOT EXISTS HOSPITAL;
 USE HOSPITAL;
 ```
+
+Depois de acessar e executar o script em <a href='ScriptSQL/hospital.sql'>hospital.sql</a>, é importante *inserir dados no nosso banco de dados!*
+
+```SQL
+INSERT INTO MEDICO 
+VALUES (null, '1234567891', 'Fulano de Tal', DATE '2023-05-17', 1, '+5511999999999');
+```
+
+Ao acessar o script <a href='ScriptSQL/insertHospital.sql'>insertHospital.sql</a>, você terá acesso a algumas informações reais sobre o essa área hospitalar, como nome de médicos, crm e telefones verdadeiros de acordo até com as especialidades e datas de diplomação que foram cadastradas, é bem legal de observar a consistência da pesquisa feita na hora de consultar esses dados. Exemplo:
+
+```SQL
+select nr_crm, dt_emissaoCrm, uf_emissorCrm, nm_medico, 
+telefoneMedico, dt_diplomacao,nm_especialidade 
+from crm
+inner join medico on medico.id_crmMedico=crm.id_crm
+inner join medicoEspecialidade on medicoEspecialidade.id_medicoESP=medico.id_medico
+inner join especialidade on medicoEspecialidade.id_especialidadeESP=especialidade.id_especialidade;
+```
+
+Esse script retornará uma tabela assim com todos os dados inseridos sobre os médicos:
+<table>
+<tr>
+    <th>nr_crm</th>
+    <th>dt_emissaoCrm</th>
+    <th>uf_emissorCrm</th>
+    <th>nm_medico</th>
+    <th>telefoneMedico</th>
+    <th>dt_diplomacao</th>
+    <th>nm_especialidade</th>
+  </tr>
+  <tr>
+    <td>47742</td>
+    <td>1984-02-21/td>
+    <td>SP</td>
+    <td>Newton Nakamura</td>
+    <td>+5520925999</td>
+    <td>1983-12-20</td>
+    <td>Pediatria</td>
+  </tr>	
+  <tr>
+    <td>101092</td>
+    <td>2000-12-19</td>
+    <td>SP</td>
+    <td>Juliana Mossini Nicoliello</td>
+    <td>+551150838222</td>
+    <td>2003-12-20</td>
+    <td>Clínica Geral</td>
+  </tr>
+</table>
