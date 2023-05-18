@@ -65,7 +65,7 @@ Esse script retornar√° uma tabela assim com todos os dados inseridos sobre os m√
   </tr>
   <tr>
     <td>47742</td>
-    <td>1984-02-21/td>
+    <td>1984-02-21</td>
     <td>SP</td>
     <td>Newton Nakamura</td>
     <td>+5520925999</td>
@@ -77,7 +77,7 @@ Esse script retornar√° uma tabela assim com todos os dados inseridos sobre os m√
     <td>2000-12-19</td>
     <td>SP</td>
     <td>Juliana Mossini Nicoliello</td>
-    <td>+551150838222</td>
+    <td>+55115083822</td>
     <td>2003-12-20</td>
     <td>Cl√≠nica Geral</td>
   </tr>
