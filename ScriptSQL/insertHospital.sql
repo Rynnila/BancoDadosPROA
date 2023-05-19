@@ -129,9 +129,9 @@ insert into quarto values
 (null, 6);
 
 insert into tipo_quarto values
-(null, 1, 'Quarto pós-operatório, feito para pessoas que acabaram de sair de uma cirurgia', 150.00),
-(null, 2, 'Quarto para internação breve, o pacinte ficará no máximo 3 dias nesse quarto', 60.00),
-(null, 3, 'Quarto com modificações para PCD', 100.00),
+(null, 1, 'Apartamento', 500.00),
+(null, 2, 'Quarto duplo', 50.00),
+(null, 3, 'Enfermaria', 80.00);
 (null, 4, 'Apartamento', 500.00),
 (null, 5, 'Quarto duplo', 50.00),
 (null, 6, 'Enfermaria', 80.00);
