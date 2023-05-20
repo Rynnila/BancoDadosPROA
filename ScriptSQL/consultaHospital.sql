@@ -54,4 +54,6 @@ select * from receita
 inner join consulta on receita.id_consultaRec=consulta.id_consulta 
 order by id_consulta asc limit 1;
 
-select * from consulta;
+select * from consulta 
+where id_convenioCons is null 
+order by valor_consulta desc limit 1;
