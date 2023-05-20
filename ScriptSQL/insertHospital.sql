@@ -131,7 +131,7 @@ insert into quarto values
 insert into tipo_quarto values
 (null, 1, 'Apartamento', 500.00),
 (null, 2, 'Quarto duplo', 50.00),
-(null, 3, 'Enfermaria', 80.00);
+(null, 3, 'Enfermaria', 80.00),
 (null, 4, 'Apartamento', 500.00),
 (null, 5, 'Quarto duplo', 50.00),
 (null, 6, 'Enfermaria', 80.00);
