@@ -7,6 +7,7 @@ Repositório com os diagramas e conceitos trabalhados nas aulas de banco de dado
 * [Diagrama2 - Hospital Pt.2](#diagrama2---hospital-pt2)
 * [Diagrama3 - Hospital Lógico](#diagrama3---hospital-lógico)
 * [Codigo1 - Hospital Fisico](#codigo1---hospital-físico)
+* [Codigo2 - Select Hospital Fisico](#codigo2---select-hospital-físico)
 
 ### Diagrama1 - Hospital:
 
@@ -82,3 +83,11 @@ Esse script retornará uma tabela assim com todos os dados inseridos sobre os m�
     <td>Clínica Geral</td>
   </tr>
 </table>
+
+### Codigo2 - Select Hospital Físico
+
+A última parte da tarefa diz respeito às consultas no banco de dados.
+
+```SQL
+select * from ... 
+```
