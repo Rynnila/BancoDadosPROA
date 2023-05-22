@@ -7,6 +7,7 @@ Repositório com os diagramas e conceitos trabalhados nas aulas de banco de dado
 * [Diagrama2 - Hospital Pt.2](#diagrama2---hospital-pt2)
 * [Diagrama3 - Hospital Lógico](#diagrama3---hospital-lógico)
 * [Codigo1 - Hospital Fisico](#codigo1---hospital-físico)
+* [Codigo2 - Select Hospital Fisico](#codigo2---select-hospital-físico)
 
 ### Diagrama1 - Hospital:
 
@@ -82,3 +83,20 @@ Esse script retornará uma tabela assim com todos os dados inseridos sobre os m�
     <td>Clínica Geral</td>
   </tr>
 </table>
+
+### Codigo2 - Select Hospital Físico
+
+A última parte da tarefa diz respeito às consultas no banco de dados.
+
+```SQL
+select * from ... 
+```
+
+Exemplo de consulta cobrada na tarefa:
+
+*1 - Todos os dados e o valor médio das consultas do ano de 2020 e das que foram feitas sob convênio.*
+```SQL
+select id_consulta, id_medicoCons, id_pacienteCons, dt_realizacaoCons, hr_realizacaoCons, valor_consulta, id_convenioCons
+from consulta where dt_realizacaoCons>=DATE('2020-01-01');
+select avg(valor_consulta) as media_consultas2020 from consulta where dt_realizacaoCons>=DATE('2020-01-01');
+```
