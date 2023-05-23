@@ -61,3 +61,15 @@ order by valor_consulta desc limit 1;
 select * from consulta 
 where id_convenioCons is null 
 order by valor_consulta asc limit 1;
+
+select internacao.id_internacao, internacao.dt_entradaInter, internacao.dt_prev_alta, 
+internacao.dt_alta, internacao.procedimentoInternacao, paciente.nome_paciente,
+cpf_paciente, dt_nascimentoPaciente, telefonePaciente, nm_enfermeiro, cre, nm_medico,
+telefoneMedico, medico.cpf, id_quarto, ds_quarto, valorDiaria,
+tipo_quarto.valorDiaria*(DATEDIFF(dt_alta, dt_entradaInter)) AS preco_total_por_dia
+from internacao 
+inner join quarto on internacao.id_quartoInter=quarto.id_quarto
+inner join paciente on internacao.id_pacienteInter=paciente.id_paciente
+inner join medico on internacao.id_medicoInter=medico.id_medico
+inner join enfermeiro on internacao.id_enfermeiroInter=enfermeiro.id_enfermeiro
+inner join tipo_quarto on tipo_quarto.id_quartoTipo=quarto.id_quarto;
