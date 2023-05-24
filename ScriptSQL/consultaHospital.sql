@@ -73,3 +73,8 @@ inner join paciente on internacao.id_pacienteInter=paciente.id_paciente
 inner join medico on internacao.id_medicoInter=medico.id_medico
 inner join enfermeiro on internacao.id_enfermeiroInter=enfermeiro.id_enfermeiro
 inner join tipo_quarto on tipo_quarto.id_quartoTipo=quarto.id_quarto;
+
+select dt_entradaInter, dt_alta, procedimentoInternacao, nr_quarto, ds_quarto from internacao
+inner join quarto on internacao.id_quartoInter=quarto.id_quarto
+inner join tipo_quarto on tipo_quarto.id_quartoTipo=quarto.id_quarto 
+where ds_quarto="Apartamento";
