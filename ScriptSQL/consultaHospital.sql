@@ -78,3 +78,16 @@ select dt_entradaInter, dt_alta, procedimentoInternacao, nr_quarto, ds_quarto fr
 inner join quarto on internacao.id_quartoInter=quarto.id_quarto
 inner join tipo_quarto on tipo_quarto.id_quartoTipo=quarto.id_quarto 
 where ds_quarto="Apartamento";
+
+select paciente.nome_paciente, consulta.dt_realizacaoCons, consulta.hr_realizacaoCons, especialidade.nm_especialidade,
+TIMESTAMPDIFF(YEAR, dt_nascimentoPaciente, CURRENT_DATE) AS idade_paciente,
+TIMESTAMPDIFF(YEAR, dt_nascimentoPaciente, dt_realizacaoCons) AS idade_diaConsulta
+from consulta
+inner join paciente on consulta.id_pacienteCons=paciente.id_paciente
+inner join medico on consulta.id_medicoCons=medico.id_medico
+inner join medicoEspecialidade on medico.id_medico=medicoEspecialidade.id_medicoESP
+inner join especialidade on medicoEspecialidade.id_especialidadeESP=especialidade.id_especialidade
+where TIMESTAMPDIFF(YEAR, dt_nascimentoPaciente, dt_realizacaoCons)<18 
+and especialidade.nm_especialidade<>"Pediatria" 
+order by consulta.dt_realizacaoCons;
+
