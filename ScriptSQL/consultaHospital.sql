@@ -91,3 +91,10 @@ where TIMESTAMPDIFF(YEAR, dt_nascimentoPaciente, dt_realizacaoCons)<18
 and especialidade.nm_especialidade<>"Pediatria" 
 order by consulta.dt_realizacaoCons;
 
+select nome_paciente, nm_medico, dt_entradaInter, procedimentoInternacao, nm_especialidade
+from internacao
+inner join paciente on internacao.id_pacienteInter=paciente.id_paciente
+inner join medico on internacao.id_medicoInter=medico.id_medico
+inner join medicoEspecialidade on medico.id_medico=medicoEspecialidade.id_medicoESP
+inner join especialidade on medicoEspecialidade.id_especialidadeESP=especialidade.id_especialidade
+where nm_especialidade="Gastrenterologia";
