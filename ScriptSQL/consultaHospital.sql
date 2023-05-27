@@ -105,3 +105,10 @@ from medico
 inner join crm on medico.id_crmMedico=crm.id_crm
 inner join consulta on consulta.id_medicoCons=medico.id_medico
 group by id_medico;
+
+select * from medico where nm_medico like"%gabriel%";
+
+select nm_enfermeiro, cre, count(id_internacao) as nr_internacoes
+from enfermeiro 
+inner join internacao on internacao.id_enfermeiroInter=enfermeiro.id_enfermeiro
+group by id_enfermeiro;
