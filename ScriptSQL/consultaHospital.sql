@@ -98,3 +98,10 @@ inner join medico on internacao.id_medicoInter=medico.id_medico
 inner join medicoEspecialidade on medico.id_medico=medicoEspecialidade.id_medicoESP
 inner join especialidade on medicoEspecialidade.id_especialidadeESP=especialidade.id_especialidade
 where nm_especialidade="Gastrenterologia";
+
+select nm_medico, nr_crm, dt_emissaoCrm, uf_emissorCrm, id_medico,
+count(id_consulta) as consultasFeitas
+from medico
+inner join crm on medico.id_crmMedico=crm.id_crm
+inner join consulta on consulta.id_medicoCons=medico.id_medico
+group by id_medico;
