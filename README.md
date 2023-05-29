@@ -100,3 +100,22 @@ select id_consulta, id_medicoCons, id_pacienteCons, dt_realizacaoCons, hr_realiz
 from consulta where dt_realizacaoCons>=DATE('2020-01-01');
 select avg(valor_consulta) as media_consultas2020 from consulta where dt_realizacaoCons>=DATE('2020-01-01');
 ```
+
+Meu select favorito e mais desafiador foi:
+*Nome do paciente, data da consulta e especialidade de todas as consultas em que os pacientes eram menores de 
+18 anos na data da consulta e cuja especialidade não seja “pediatria”, ordenando por data de realização da consulta.*
+```SQL
+select paciente.nome_paciente, consulta.dt_realizacaoCons, consulta.hr_realizacaoCons, especialidade.nm_especialidade,
+TIMESTAMPDIFF(YEAR, dt_nascimentoPaciente, CURRENT_DATE) AS idade_paciente,
+TIMESTAMPDIFF(YEAR, dt_nascimentoPaciente, dt_realizacaoCons) AS idade_diaConsulta
+from consulta
+inner join paciente on consulta.id_pacienteCons=paciente.id_paciente
+inner join medico on consulta.id_medicoCons=medico.id_medico
+inner join medicoEspecialidade on medico.id_medico=medicoEspecialidade.id_medicoESP
+inner join especialidade on medicoEspecialidade.id_especialidadeESP=especialidade.id_especialidade
+where TIMESTAMPDIFF(YEAR, dt_nascimentoPaciente, dt_realizacaoCons)<18 
+and especialidade.nm_especialidade<>"Pediatria" 
+order by consulta.dt_realizacaoCons;
+```
+
+FIM DA TAREFA!!
